@@ -67,7 +67,7 @@
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=250",
         "name": "Chlorophyll Absorption Ratio Index 2\r",
         "abbreviation": "CARI2\r",
-        "formula": "[700]*([670]*a + [670] + b)/([670]*(a**2 + 1)**0.5)",
+        "formula": "[700]*([670]*(([700]-[550])/[150]) + [670] + [550] - (([700]-[550])/[150]*[550]) )/([670]*(((([700]-[550])/[150]))**2 + 1)**0.5)",
         "references": [
             {
                 "article_name": "Kim, M. S. - The Use of Narrow Spectral Bands for Improving Remote Sensing Estimation of Fractionally Absorbed Photosynthetically Active Radiation (fAPAR)\n",
@@ -200,7 +200,7 @@
     },
     {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=264",
-        "name": "Average reflectance 750 to 850\r",
+        "name": "[750:850]",
         "abbreviation": "AR750/850\r",
         "formula": "Averagereflectancebetween750nmand850nm",
         "references": [
@@ -461,19 +461,6 @@
         ]
     },
     {
-        "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=292",
-        "name": "Ratio Analysis of Reflectance Spectra C2\r",
-        "abbreviation": "RARSc2\r",
-        "formula": "760nm*r470/(470nm*r760)",
-        "references": [
-            {
-                "article_name": "Blackburn, G. A. - Spectral indices for estimating photosynthetic pigment concentrations: A test using senescent tree leaves\n",
-                "article_link": "10.1080/014311698215919",
-                "article_doi": "http://dx.doi.org/10.1080/014311698215919"
-            }
-        ]
-    },
-    {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=3",
         "name": "Amphibole\r",
         "abbreviation": "",
@@ -676,7 +663,7 @@
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=381",
         "name": "Optimized Soil Adjusted Vegetation Index 1510\r",
         "abbreviation": "OSAVI1510\r",
-        "formula": "(-1510nm + 800nm)*(L + 1)/(1510nm + 800nm + L)",
+        "formula": "(-1510nm + 800nm)*(0.16 + 1)/(1510nm + 800nm + 0.16)",
         "references": [
             {
                 "article_name": "Herrmann, I.; Karnieli, A.; Bonfil, D. J.; Cohen, Y.; Alchanatis, V. - SWIR-based spectral indices for assessing nitrogen content in potato fields\n",
@@ -689,7 +676,7 @@
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=75",
         "name": "Reduced Simple Ratio\r",
         "abbreviation": "RSR\r",
-        "formula": "-MIR/MIRmax + MIRmax*NIR/RED + MIRmin",
+        "formula": "-[1400:3000]/[3000] + [3000]*[780]/[640:760] + [1400]",
         "references": [
             {
                 "article_name": "Heiskanen, J. - Estimating aboveground tree biomass and leaf area index in a mountain birch forest using ASTER satellite data\n",
@@ -781,13 +768,6 @@
         ]
     },
     {
-        "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=77",
-        "name": "Saturation\r",
-        "abbreviation": "S\r",
-        "formula": "Can't parse",
-        "references": []
-    },
-    {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=155",
         "name": "Datt6\r",
         "abbreviation": "Datt6\r",
@@ -862,7 +842,7 @@
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=55",
         "name": "Normalized Difference Lignin Index\r",
         "abbreviation": "NDLI\r",
-        "formula": "Can't parse",
+        "formula": "(log([1754]) - log([1680]))/(log([1754]) + log([1680]))",
         "references": [
             {
                 "article_name": "Serrano, Lydia; PeÃ±uelas, Josep; Ustin, Susan L. - Remote sensing of nitrogen and lignin in Mediterranean vegetation from AVIRIS data: Decomposing biochemical from structural signals\n",
@@ -1378,29 +1358,6 @@
         ]
     },
     {
-        "idb_link": "https://www.indexdatabase.de//db/r-single.php?id=492",
-        "name": "Kooistra, L.; Leuven, R. S. E. W.; Wehrens, R.; Nienhuis, P. H.; Buydens, L. M. C.\r",
-        "abbreviation": "A comparison of methods to relate grass reflectance to soil metal contamination\r",
-        "formula": "Can't parse",
-        "references": [
-            {
-                "article_name": "Metal\n",
-                "article_link": " ",
-                "article_doi": " "
-            },
-            {
-                "article_name": "Soil\n",
-                "article_link": " ",
-                "article_doi": " "
-            },
-            {
-                "article_name": "Soil - Contamination\n",
-                "article_link": " ",
-                "article_doi": " "
-            }
-        ]
-    },
-    {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=517",
         "name": "Single Band 2130\r",
         "abbreviation": "SB2130\r",
@@ -1446,19 +1403,6 @@
                 "article_name": "Main, Russell; Cho, Moses Azong; Mathieu, Renaud; Oâ€™Kennedy, Martha M.; Ramoelo, Abel; Koch, Susan - An investigation into robust spectral indices for leaf chlorophyll estimation\n",
                 "article_link": "10.1016/j.isprsjprs.2011.08.001",
                 "article_doi": "http://www.sciencedirect.com/science/article/pii/S092427161100089X"
-            }
-        ]
-    },
-    {
-        "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=34",
-        "name": "Hue\r",
-        "abbreviation": "H\r",
-        "formula": "Can't parse",
-        "references": [
-            {
-                "article_name": "Escadafal, R.; Belghith, A.; Ben Moussa, H. - Indices spectraux pour la dÃ©gradation des milieux naturels en Tunisie aride\n",
-                "article_link": "",
-                "article_doi": ""
             }
         ]
     },
@@ -1574,19 +1518,6 @@
         ]
     },
     {
-        "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=299",
-        "name": "Ratio Analysis of Reflectance Spectra A3\r",
-        "abbreviation": "RARSa3\r",
-        "formula": "675nm*r800/(800nm*r670)",
-        "references": [
-            {
-                "article_name": "Blackburn, G. A. - Spectral indices for estimating photosynthetic pigment concentrations: A test using senescent tree leaves\n",
-                "article_link": "10.1080/014311698215919",
-                "article_doi": "http://dx.doi.org/10.1080/014311698215919"
-            }
-        ]
-    },
-    {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=43",
         "name": "Modified Chlorophyll Absorption in Reflectance Index 2\r",
         "abbreviation": "MCARI2\r",
@@ -1612,19 +1543,6 @@
         "references": []
     },
     {
-        "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=300",
-        "name": "Ratio Analysis of Reflectance Spectra A4\r",
-        "abbreviation": "RARSa4\r",
-        "formula": "680nm*r800/(800nm*r680)",
-        "references": [
-            {
-                "article_name": "Blackburn, G. A. - Spectral indices for estimating photosynthetic pigment concentrations: A test using senescent tree leaves\n",
-                "article_link": "10.1080/014311698215919",
-                "article_doi": "http://dx.doi.org/10.1080/014311698215919"
-            }
-        ]
-    },
-    {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=396",
         "name": "Atmospherically Resistant Vegetation Index 2\r",
         "abbreviation": "ARVI2\r",
@@ -1636,13 +1554,6 @@
                 "article_doi": ""
             }
         ]
-    },
-    {
-        "idb_link": "https://www.indexdatabase.de//db/r-single.php?id=390",
-        "name": "Cole, Monica M.; Smith, Roger F.\r",
-        "abbreviation": "Vegetation as Indicator of Environmental Pollution\r",
-        "formula": "Can't parse",
-        "references": []
     },
     {
         "idb_link": "https://www.indexdatabase.de//db/i-single.php?id=401",
