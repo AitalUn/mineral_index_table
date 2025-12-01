@@ -31,6 +31,7 @@ def parse_satellite_bands_table(
     return satellite_bands
 
 
+
 def wavelength_to_band(wl_min: float, wl_max: float, bands: dict) -> str:
     is_hyperspec = len(bands) > 100
 
@@ -92,6 +93,7 @@ def wavelength_to_band(wl_min: float, wl_max: float, bands: dict) -> str:
                 best = bname
 
     return best if best else "nan"
+
 
 
 def convert_formula(formula: str, sat: dict) -> str:
